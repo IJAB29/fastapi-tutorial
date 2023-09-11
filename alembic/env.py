@@ -5,6 +5,7 @@ from sqlalchemy import pool
 
 from alembic import context
 
+
 # import from models instead of database so that alembic will be able to read all the db models
 from app.models import Base
 from app.config import settings
@@ -16,6 +17,7 @@ config.set_main_option(
     "sqlalchemy.url",
     f"postgresql+psycopg2://{settings.database_username}:{settings.database_password}@{settings.database_hostname}/{settings.database_name}"
 )
+
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
