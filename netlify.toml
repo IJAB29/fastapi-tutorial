@@ -1,4 +1,4 @@
 [build]
-  command = "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-5000}"
+  command = "gunicorn -k uvicorn.workers.UvicornWorker"
   alembic = "alembic revision --autogenerate -m 'generate initial migration'"
   create_all = "alembic upgrade head"
