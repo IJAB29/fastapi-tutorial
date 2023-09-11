@@ -1,4 +1,4 @@
 [build]
-  command = "gunicorn -k uvicorn.workers.UvicornWorker"
+  command = "gunicorn -k uvicorn.workers.UvicornWorker app.main:app"
   alembic = "alembic revision --autogenerate -m 'generate initial migration'"
   create_all = "alembic upgrade head"
